@@ -15,8 +15,9 @@
     state: stopped
     template_options: -d centos -r 7 -a amd64
   with_items:
-    containers
+    "{{ containers }}"
   when: containers_ipaddr_dnsmasq_hots.changed
+  tags: [stop_containers]
 
 - name: Create and start containers
   lxc_container:
@@ -26,4 +27,4 @@
     state: started
     template_options: -d centos -r 7 -a amd64
   with_items:
-    containers
+    "{{ containers }}"
