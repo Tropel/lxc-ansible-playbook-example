@@ -1,0 +1,7 @@
+---
+- hosts: "{{ group }}"
+  remote_user: root
+  vars_files:
+    - ../common/group_vars/{{ group }}.yml
+  roles:
+    - ../common/roles/show_ip

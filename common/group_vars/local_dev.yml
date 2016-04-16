@@ -1,0 +1,6 @@
+---
+containers:
+  - { name: "web01", ip_address: "10.0.3.101" }
+  - { name: "web02", ip_address: "10.0.3.102" }
+  - { name: "db01",  ip_address: "10.0.3.111" }
+  - { name: "db02",  ip_address: "10.0.3.112" }

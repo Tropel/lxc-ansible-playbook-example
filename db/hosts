@@ -1,0 +1,3 @@
+[local_dev]
+db01 ansible_connection=lxc
+db02 ansible_connection=lxc

@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  connection: local
+  become: True
+  vars_files:
+    - ../common/group_vars/{{ group }}.yml
+  roles:
+    - name: lxc_connection_plugin
+      tags: [lxc_connection_plugin]
+    - name: containers
+      tags: [containers]
