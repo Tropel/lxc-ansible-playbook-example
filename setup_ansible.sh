@@ -17,7 +17,7 @@ check_distrib_release() {
 
 install_ansible_on_trusty() {
   apt-add-repository -y ppa:ansible/ansible
-  apt-add-repository -y ppa:ubuntu-cloud-archive/juno-staging
+  apt-add-repository -y ppa:hnakamur/python-lxc
   apt-get update
   apt-get install -y ansible python-lxc git
 }
