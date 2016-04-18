@@ -1,6 +1,6 @@
 ---
-- name: Create directory for ansible connection plugsins
-  file: path=/etc/ansible/connection_plugins state=directory
+- name: Add ppa repository for ansible-lxc connection plugin
+  apt_repository: repo=ppa:hnakamur/ansible-lxc state=present
 
-- name: Get Ansible Connection Plugin to deploy to local lxc containers
-  git: repo=https://github.com/Mic92/ansible-lxc dest=/etc/ansible/connection_plugins/lxc
+- name: Install ansible-lxc connection plugin
+  apt: name=ansible-lxc state=present
