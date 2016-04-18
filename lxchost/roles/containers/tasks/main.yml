@@ -26,5 +26,9 @@
     template: download
     state: started
     template_options: -d centos -r 7 -a amd64
+    # NOTE: This container_command below is copied from
+    # https://lists.linuxcontainers.org/pipermail/lxc-users/2014-February/006304.html
+    container_command: |
+      [ -f /etc/systemd/system/sigpwr.target ] || ln -s /usr/lib/systemd/system/halt.target /etc/systemd/system/sigpwr.target
   with_items:
     "{{ containers }}"
