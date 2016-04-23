@@ -1,6 +1,7 @@
 ---
 - name: Add ppa repository for ansible-lxc connection plugin
   apt_repository: repo=ppa:hnakamur/ansible-lxc state=present
+  register: lxc_connection_plugin_ansible_lxc_ppa_repo
 
 - name: Install ansible-lxc connection plugin
-  apt: name=ansible-lxc state=present
+  apt: name=ansible-lxc state=present update_cache={{ lxc_connection_plugin_ansible_lxc_ppa_repo.changed }}
